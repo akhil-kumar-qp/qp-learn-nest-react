@@ -35,11 +35,10 @@ export const mswDevHandlers = [
     return sendResponse(newTodo);
   }),
 
-  http.get(`${API_BASE_URL}/api/todos`, async ({ request }) => {
+  http.get(`${API_BASE_URL}/api/todos`, async () => {
     await delayedResponse();
 
     const tasks = taskMockDb.getTask();
     return sendResponse(tasks);
   }),
 ];
-
